@@ -1,0 +1,27 @@
+
+#expenseTable{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+    
+
+td, th{
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+th{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#insertTable {
+    color: black ;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 30%;
+    border:0px solid transparent;
+  }
+
+

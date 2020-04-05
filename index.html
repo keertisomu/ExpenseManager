@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript"> 
+        jQuery(document).ready(function(){ 
+            console.log('ready!');
+            $('#expenseTable td:nth-child(2)').hide();
+
+            //$('td:nth-child(0)').hide();
+            console.log('ready 2!');
+
+        });
+        </script>
     <title>Expense manager</title>
 </head>
 <body>
@@ -23,13 +34,38 @@
     </br>
     </div>
     <div>
-        <label><b>Add Expense</b></label></br>
-        Name<input type="text" id="txtName"></br>
-        Value<input type="text" id="txtValue"></br>
-        Category<input type="text" id="txtCategory"></br>
-        <button id="btnSubmit" onclick="addExpenseAsync()" >Add</button>
+        <label><b>Add Expense</b></label></br></br>
+        <table id="insertTable" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="txtName"></td>
+            </tr>
+            <tr>
+                <td>Value</td>
+                <td><input type="text" id="txtValue"></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="date" id="dtExpense"></td>
+            <tr>
+            <tr>
+                <td><label for="category">Category</label></td>
+                <td>
+                    <select id="selectCategory">
+                        <option value="groceries">Groceries</option>
+                        <option value="travel">Travel</option>
+                        <option value="enter">Entertaintment</option>
+                        <option value="rent">Rent</option>
+                        <option value="Utilities">Utilities</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </br>
+        <button id="btnSubmit" onclick="addExpenseAsync()">Add</button>
     </div>
-    <script src="app.js">//script
-    </script>
+    <script src="app.js"></script>
+    <script src="expenseUtilities.js"></script>
+    <script src="expenseRestHelper.js"></script>
 </body>
 </html>
